@@ -22,8 +22,21 @@ in {
   ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  #boot.loader.systemd-boot.enable = true;
+  boot.loader = {
+    efi.canTouchEfiVariables = true;
+    grub.enable = true;
+    grub.useOSProber = true;
+    grub.device = "nodev";
+    grub.efiSupport = true;
+    grub.extraEntries = ''
+      # GRUB 2 with UEFI example, chainloading another distro
+      menuentry "DRCbian - Wii U Gamepad" {
+        set root=(hd1,1)
+        chainloader /EFI/debian/grubx64.efi
+      }
+    '';
+  };
 
   networking.hostName = "hyperboid-laptop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
