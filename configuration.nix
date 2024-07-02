@@ -4,6 +4,7 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }: let
   gnomeExts = with pkgs.gnomeExtensions; [
@@ -32,14 +33,15 @@ in {
     grub.extraEntries = ''
       # GRUB 2 with UEFI example, chainloading another distro
       menuentry "DRCbian - Wii U Gamepad" {
-        set root=(hd1,1)
+        set root=(hd1,2)
         chainloader /EFI/debian/grubx64.efi
       }
     '';
   };
 
   networking.hostName = "hyperboid-laptop"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  # networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
+  networking.useNetworkd = lib.mkDefault true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -47,6 +49,8 @@ in {
 
   # Enable networking
   networking.networkmanager.enable = true;
+  systemd.network.wait-online.enable = false;
+  boot.initrd.systemd.network.wait-online.enable = false;
 
   # Set your time zone.
   time.timeZone = "America/New_York";
@@ -161,6 +165,8 @@ in {
     gnome-extension-manager
     vte
     libhandy
+    love
+    gedit
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
