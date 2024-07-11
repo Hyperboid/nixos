@@ -27,9 +27,12 @@ in {
   boot.loader = {
     efi.canTouchEfiVariables = true;
     grub.enable = true;
-    grub.useOSProber = true;
     grub.device = "nodev";
     grub.efiSupport = true;
+    grub.theme = pkgs.sleek-grub-theme.override {
+      withStyle = "white";
+      withBanner = "Choose an OS";
+    };
     grub.extraEntries = ''
       # GRUB 2 with UEFI example, chainloading another distro
       menuentry "DRCbian - Wii U Gamepad" {
