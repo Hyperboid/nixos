@@ -13,6 +13,9 @@
     theme.name = "Adwaota";
   };
   home.stateVersion = "24.05";
+  home.packages = with pkgs; [
+    gamescope
+  ];
   programs = {
     emacs = {
       enable = true;
