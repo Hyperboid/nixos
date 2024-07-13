@@ -152,6 +152,10 @@ in {
     enable = true;
     package = pkgs.gnomeExtensions.gsconnect;
   };
+  programs.steam = {
+    enable = true;
+    extest.enable = true;
+  };
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = ["nix-command" "flakes"];
