@@ -1,0 +1,14 @@
+(defsrc
+  caps
+  tab
+)
+
+(defalias
+  esc-ctrl (tap-hold 100 100 esc lctrl)
+  tab-meta (tap-hold 100 100 tab lmet)
+)
+
+(deflayer base
+  @esc-ctrl
+  @tab-meta
+)

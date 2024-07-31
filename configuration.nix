@@ -188,7 +188,16 @@ in {
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
-
+  services.kanata = {
+    enable = true;
+    keyboards = {
+      laptop = {
+        devices = ["/dev/input/by-path/platform-i8042-serio-0-event-kbd"];
+        config = builtins.readFile ./kanata/config.kbd;
+      };
+    };
+  };
+  systemd.services.kanata-laptop.serviceConfig.User = lib.mkForce "root";
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
