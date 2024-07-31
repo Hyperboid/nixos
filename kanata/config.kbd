@@ -5,7 +5,7 @@
 
 (defalias
   esc-ctrl (tap-hold 100 100 esc lctrl)
-  tab-meta (tap-hold 100 100 tab lmet)
+  tab-meta (tap-hold-press 200 200 tab lmet)
 )
 
 (deflayer base
