@@ -147,6 +147,12 @@ in {
   programs.nix-ld.libraries = with pkgs; [
     vte
     libhandy
+    glib
+    xorg.libxshmfence
+    nss
+    nspr
+    atkmm
+    steamPackages.steam-fhsenv-without-steam # woah this is huge
   ];
   programs.kdeconnect = {
     enable = true;
