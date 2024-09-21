@@ -1,0 +1,16 @@
+#!/usr/bin/env nix-shell
+#! nix-shell -i bash -p bash -p alejandra
+
+# Based on the example pre-commit script from git
+
+if git rev-parse --verify HEAD >/dev/null 2>&1
+then
+	against=HEAD
+else
+	# Initial commit: diff against an empty tree object
+	against=$(git hash-object -t tree /dev/null)
+fi
+set -e
+shopt -s lastpipe
+git diff-index --cached --name-only $against | readarray -t changes
+alejandra --check "$changes"
