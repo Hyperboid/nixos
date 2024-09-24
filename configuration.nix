@@ -5,8 +5,10 @@
   config,
   pkgs,
   lib,
+  specialArgs,
   ...
 }: let
+  unstable = specialArgs.unstable;
   gnomeExts = with pkgs.gnomeExtensions; [
     ddterm
     paperwm

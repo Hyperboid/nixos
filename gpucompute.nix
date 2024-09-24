@@ -2,8 +2,11 @@
   config,
   pkgs,
   lib,
+  specialArgs,
   ...
-}: {
+}: let
+  unstable = specialArgs.unstable;
+in {
   options = {
     custom.gpu_compute_enable = pkgs.lib.mkOption {
       default = false;
