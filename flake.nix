@@ -31,7 +31,10 @@
             # arguments to home.nix
           }
         ];
-        specialArgs = { inputs = inputs; unstable = nixpkgs-unstable.legacyPackages.x86_64-linux; }; 
+        specialArgs = {
+          inputs = inputs;
+          unstable = nixpkgs-unstable.legacyPackages.x86_64-linux;
+        };
       };
     };
   };
