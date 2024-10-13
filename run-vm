@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+name=${1:-$(hostname)}
+
+rm $name-efi-vars.fd $name.qcow2 &> /dev/null
+nixos-rebuild --flake .#$name build-vm-with-bootloader && ./result/bin/run-$name-vm;
+rm $name-efi-vars.fd $name.qcow2 &> /dev/null
