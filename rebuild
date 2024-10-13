@@ -13,9 +13,6 @@
 # A rebuild script that commits on a successful build
 set -eu
 
-# Edit your config
-$EDITOR configuration.nix
-
 # cd to your config dir
 pushd ~/.config/nixos/
 
