@@ -36,6 +36,12 @@
           unstable = nixpkgs-unstable.legacyPackages.x86_64-linux;
         };
       };
+      nullanoid-server = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./nullanoid/configuration.nix
+        ];
+      };
     };
   };
 }
