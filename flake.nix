@@ -14,7 +14,12 @@
     nixpkgs-unstable,
     home-manager,
     ...
-  }: {
+  }: let
+    specialArgs = {
+      inputs = inputs;
+      unstable = nixpkgs-unstable.legacyPackages.x86_64-linux;
+    };
+  in {
     nixosConfigurations = {
       hyperboid-laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -31,16 +36,14 @@
             # arguments to home.nix
           }
         ];
-        specialArgs = {
-          inputs = inputs;
-          unstable = nixpkgs-unstable.legacyPackages.x86_64-linux;
-        };
+        inherit specialArgs;
       };
       nullanoid-server = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./nullanoid/configuration.nix
         ];
+        inherit specialArgs;
       };
     };
   };
