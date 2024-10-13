@@ -1,2 +1,6 @@
 result
 nixos-switch.log
+
+# VMs
+*-efi-vars.fd
+*.qcow2
