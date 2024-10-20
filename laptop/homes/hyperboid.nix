@@ -31,4 +31,7 @@
       ];
     };
   };
+  services = {
+    arrpc.enable = true;
+  };
 }
