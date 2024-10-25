@@ -3,14 +3,17 @@
   pkgs,
   ...
 }: {
-  gtk = {
+  gtk = let
+    icons = {
+      name = "Adwaita";
+      package = pkgs.gnome.adwaita-icon-theme;
+    };
+  in {
     enable = true;
     gtk3.extraConfig.gtk-decoration-layout = "menu:";
-    cursorTheme.name = "Adwaita";
-    cursorTheme.package = pkgs.gnome.adwaita-icon-theme;
-    iconTheme.name = "Adwaita";
-    iconTheme.package = pkgs.gnome.adwaita-icon-theme;
-    theme.name = "Adwaota";
+    cursorTheme = icons;
+    iconTheme = icons;
+    theme.name = "Adwaita";
   };
   home.stateVersion = "24.05";
   home.packages = with pkgs; [
