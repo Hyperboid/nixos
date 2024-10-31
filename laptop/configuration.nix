@@ -127,7 +127,7 @@ in {
   users.users.hyperboid = {
     isNormalUser = true;
     description = "Hyperboid";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "docker"];
     shell = pkgs.zsh;
     packages = with pkgs;
       [
@@ -210,6 +210,7 @@ in {
     };
   };
   systemd.services.kanata-laptop.serviceConfig.User = lib.mkForce "root";
+  virtualisation.docker.enable = true;
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
