@@ -57,6 +57,7 @@ in {
   systemd.network.wait-online.enable = false;
   # Whether or not to use CUDA.
   custom.gpu_compute_enable = true;
+  custom.nvidia_proprietary_drivers = true;
   boot.initrd.systemd.network.wait-online.enable = false;
 
   # Set your time zone.
