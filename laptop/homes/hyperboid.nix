@@ -18,6 +18,7 @@
   home.stateVersion = "24.05";
   home.packages = with pkgs; [
     gamescope
+    blockbench
   ];
   programs = {
     emacs = {
