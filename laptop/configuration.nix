@@ -187,6 +187,9 @@ in {
     libhandy
     love
     gedit
+    busybox
+    pulseaudio
+    inotify-tools
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -209,6 +212,9 @@ in {
         config = builtins.readFile ./kanata/config.kbd;
       };
     };
+  };
+  services.murmur = {
+    enable = true;
   };
   systemd.services.kanata-laptop.serviceConfig.User = lib.mkForce "root";
   virtualisation.docker.enable = true;
