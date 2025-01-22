@@ -20,14 +20,7 @@ in {
     };
   };
   config = {
-    services.ollama = lib.mkIf config.custom.gpu_compute_enable {
-      enable = true;
-      models = "/mnt/ollama/models";
-      acceleration = null;
-      writablePaths = ["/mnt/ollama"];
-      home = "/mnt/ollama";
-    };
-    environment.systemPackages = lib.mkIf config.custom.gpu_compute_enable [pkgs.blender];
+    environment.systemPackages = lib.mkIf config.custom.gpu_compute_enable [specialArgs.pkgs2411.blender];
     # Use Nvidia driver if compute apps are enabled
     # Adapted from https://nixos.wiki/wiki/Nvidia
     hardware.nvidia = lib.mkIf config.custom.nvidia_proprietary_drivers {
