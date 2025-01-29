@@ -19,6 +19,7 @@
   home.packages = with pkgs; [
     gamescope
     blockbench
+    bun
   ];
   programs = {
     emacs = {
