@@ -181,7 +181,8 @@ in {
     git
     fzf
     zoxide
-    wineWowPackages.unstable
+    # unstable wow unstable!
+    unstable.wineWowPackages.unstable
     gnome-extension-manager
     vte
     libhandy
