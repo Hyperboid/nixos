@@ -21,6 +21,11 @@
     blockbench
     bun
   ];
+  services = {
+    arrpc = {
+      enable = true;
+    };
+  };
   programs = {
     emacs = {
       enable = true;
