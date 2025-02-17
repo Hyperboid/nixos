@@ -20,6 +20,7 @@
     gamescope
     blockbench
     bun
+    unityhub
   ];
   services = {
     arrpc = {
