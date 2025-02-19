@@ -23,6 +23,7 @@
     unityhub
     vscode
     vesktop
+    aseprite
   ];
   services = {
     arrpc = {
