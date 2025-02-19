@@ -21,6 +21,8 @@
     blockbench
     bun
     unityhub
+    vscode
+    vesktop
   ];
   services = {
     arrpc = {
