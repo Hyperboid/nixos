@@ -19,7 +19,7 @@
   }: let
     specialArgs = {
       inputs = inputs;
-      unstable = nixpkgs-unstable.legacyPackages.x86_64-linux;
+      unstable = import nixpkgs-unstable {config.allowUnfree = true; system = "x86_64-linux";};
       pkgs2411 = nixpkgs-2411.legacyPackages.x86_64-linux;
     };
   in {

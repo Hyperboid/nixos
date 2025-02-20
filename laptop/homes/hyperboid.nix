@@ -1,8 +1,12 @@
 {
   config,
   pkgs,
+  lib,
+  specialArgs,
   ...
-}: {
+}: let
+  unstable = specialArgs.unstable;
+in {
   gtk = let
     icons = {
       name = "Adwaita";
@@ -16,15 +20,16 @@
     theme.name = "Adwaita";
   };
   home.stateVersion = "24.05";
-  home.packages = with pkgs; [
+  home.packages = (with pkgs; [
     gamescope
     blockbench
     bun
     unityhub
-    vscode
     vesktop
     aseprite
-  ];
+  ]) ++ (with unstable; [
+    vscode
+  ]);
   services = {
     arrpc = {
       enable = true;
