@@ -20,16 +20,18 @@ in {
     theme.name = "Adwaita";
   };
   home.stateVersion = "24.05";
-  home.packages = (with pkgs; [
-    gamescope
-    blockbench
-    bun
-    unityhub
-    vesktop
-    aseprite
-  ]) ++ (with unstable; [
-    vscode
-  ]);
+  home.packages =
+    (with pkgs; [
+      gamescope
+      blockbench
+      bun
+      unityhub
+      vesktop
+      aseprite
+    ])
+    ++ (with unstable; [
+      vscode
+    ]);
   services = {
     arrpc = {
       enable = true;
