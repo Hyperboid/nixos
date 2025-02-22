@@ -28,6 +28,7 @@ in {
       unityhub
       vesktop
       aseprite
+      nodejs-18_x
     ])
     ++ (with unstable; [
       vscode
