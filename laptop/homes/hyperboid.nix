@@ -29,6 +29,8 @@ in {
       vesktop
       aseprite
       nodejs-18_x
+      cargo
+      rustc
     ])
     ++ (with unstable; [
       vscode
