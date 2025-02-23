@@ -31,6 +31,7 @@ in {
       nodejs-18_x
       cargo
       rustc
+      rust-analyzer
     ])
     ++ (with unstable; [
       vscode
