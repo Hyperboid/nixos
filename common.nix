@@ -74,6 +74,21 @@ in {
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # Make WiFi printing actually work
+  services.printing.browsing = true;
+  services.printing.browsedConf = ''
+  BrowseDNSSDSubTypes _cups,_print
+  BrowseLocalProtocols all
+  BrowseRemoteProtocols all
+  CreateIPPPrinterQueues All
+
+  BrowseProtocols all
+      '';
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+  };
+
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
