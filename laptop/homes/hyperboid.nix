@@ -32,6 +32,7 @@ in {
       cargo
       rustc
       rust-analyzer
+      ffmpeg
     ])
     ++ (with unstable; [
       vscode
