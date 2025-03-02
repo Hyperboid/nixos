@@ -64,6 +64,24 @@
         ];
         inherit specialArgs;
       };
+      hyperboid-schmesktop = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./common.nix
+          ./schmesktop/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.hyperboid = import ./laptop/homes/hyperboid.nix;
+
+            # Optionally, use home-manager.extraSpecialArgs to pass
+            # arguments to home.nix
+            networking.hostName = specialArgs.unstable.lib.mkForce "hyperboid-schmesktop";
+          }
+        ];
+        inherit specialArgs;
+      };
       nullanoid-server = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
