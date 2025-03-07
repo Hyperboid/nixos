@@ -33,6 +33,7 @@ in {
       rustc
       rust-analyzer
       ffmpeg
+      (callPackage ../../packages/zen.nix {})
     ])
     ++ (with unstable; [
       vscode
