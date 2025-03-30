@@ -37,6 +37,7 @@ in {
     ])
     ++ (with unstable; [
       vscode
+      tiled
     ]);
   services = {
     arrpc = {
