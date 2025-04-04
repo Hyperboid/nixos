@@ -129,7 +129,6 @@ in {
       [
         thunderbird
         keepassxc
-        yt-dlp
         wl-clipboard
         nerdfonts
         gjs
@@ -137,6 +136,7 @@ in {
         libhandy
       ]
       ++ (with unstable; [
+        yt-dlp
         mpv
       ])
       ++ gnomeExts;
