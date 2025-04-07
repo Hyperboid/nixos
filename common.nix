@@ -134,6 +134,7 @@ in {
         gjs
         vte
         libhandy
+        partclone
       ]
       ++ (with unstable; [
         yt-dlp
