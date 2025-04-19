@@ -77,13 +77,13 @@ in {
   # Make WiFi printing actually work
   services.printing.browsing = true;
   services.printing.browsedConf = ''
-  BrowseDNSSDSubTypes _cups,_print
-  BrowseLocalProtocols all
-  BrowseRemoteProtocols all
-  CreateIPPPrinterQueues All
+    BrowseDNSSDSubTypes _cups,_print
+    BrowseLocalProtocols all
+    BrowseRemoteProtocols all
+    CreateIPPPrinterQueues All
 
-  BrowseProtocols all
-      '';
+    BrowseProtocols all
+  '';
   services.avahi = {
     enable = true;
     nssmdns4 = true;
