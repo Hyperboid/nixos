@@ -6,6 +6,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs-2411.url = "github:nixos/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-wine.url = "github:nixos/nixpkgs/2c8d3f48d33929642c1c12cd243df4cc7d2ce434";
     home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
@@ -13,6 +14,7 @@
   outputs = inputs @ {
     nixpkgs,
     nixpkgs-unstable,
+    nixpkgs-wine,
     nixpkgs-2411,
     home-manager,
     ...
@@ -20,6 +22,10 @@
     specialArgs = {
       inputs = inputs;
       unstable = import nixpkgs-unstable {
+        config.allowUnfree = true;
+        system = "x86_64-linux";
+      };
+      pkgs-wine = import nixpkgs-wine {
         config.allowUnfree = true;
         system = "x86_64-linux";
       };

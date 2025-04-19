@@ -9,6 +9,7 @@
   ...
 }: let
   unstable = specialArgs.unstable;
+  pkgs-wine = specialArgs.pkgs-wine;
   gnomeExts = with pkgs.gnomeExtensions; [
     ddterm
     paperwm
@@ -177,8 +178,7 @@ in {
     git
     fzf
     zoxide
-    # unstable wow unstable!
-    unstable.wineWowPackages.unstable
+    pkgs-wine.wineWowPackages.unstable
     gnome-extension-manager
     vte
     libhandy
