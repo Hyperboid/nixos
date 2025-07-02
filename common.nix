@@ -136,6 +136,7 @@ in {
         vte
         libhandy
         partclone
+        luajitPackages.luarocks
       ]
       ++ (with unstable; [
         yt-dlp
