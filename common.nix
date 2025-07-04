@@ -137,6 +137,8 @@ in {
         libhandy
         partclone
         luajitPackages.luarocks
+        id3v2
+        exiftool
       ]
       ++ (with unstable; [
         yt-dlp
