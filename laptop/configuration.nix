@@ -39,5 +39,5 @@ in {
   custom.gpu_compute_enable = true;
   custom.nvidia_proprietary_drivers = true;
   # If travelling, set a timezone override.
-  time.timeZone = lib.mkForce "Europe/Lisbon";
+  # time.timeZone = lib.mkForce "Europe/Lisbon";
 }
