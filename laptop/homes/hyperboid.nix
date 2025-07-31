@@ -38,6 +38,7 @@ in {
     ++ (with unstable; [
       vscode
       tiled
+      dragon-drop
     ]);
   services = {
     arrpc = {
