@@ -143,6 +143,7 @@ in {
       ++ (with unstable; [
         yt-dlp
         mpv
+        ydotool
       ])
       ++ gnomeExts;
   };
