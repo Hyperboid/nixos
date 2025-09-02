@@ -24,10 +24,12 @@ in {
     grub.enable = true;
     grub.device = "nodev";
     grub.efiSupport = true;
+    /* For some reason this doesn't work anymore?
     grub.theme = pkgs.sleek-grub-theme.override {
       withStyle = "white";
       withBanner = "Choose an OS";
     };
+    #*/
   };
   # networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
   networking.useNetworkd = lib.mkDefault true;
@@ -91,7 +93,6 @@ in {
   };
 
   # Enable sound with pipewire.
-  sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -106,16 +107,16 @@ in {
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
-  services.snapper = {
-    snapshotInterval = "weekly";
-    cleanupInterval = "weekly";
-    configs.home = {
-      SUBVOLUME = "/home";
-      ALLOW_USERS = ["hyperboid"];
-      TIMELINE_CREATE = true;
-      TIMELINE_CLEANUP = true;
-    };
-  };
+  # services.snapper = {
+  #   snapshotInterval = "weekly";
+  #   cleanupInterval = "weekly";
+  #   configs.home = {
+  #     SUBVOLUME = "/home";
+  #     ALLOW_USERS = ["hyperboid"];
+  #     TIMELINE_CREATE = true;
+  #     TIMELINE_CLEANUP = true;
+  #   };
+  # };
   services.flatpak.enable = true;
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -131,7 +132,7 @@ in {
         thunderbird
         keepassxc
         wl-clipboard
-        nerdfonts
+        nerd-fonts.fira-code
         gjs
         vte
         libhandy
@@ -160,7 +161,7 @@ in {
     nss
     nspr
     atkmm
-    steamPackages.steam-fhsenv-without-steam # woah this is huge
+    steam-fhsenv-without-steam # woah this was huge (used to be in steamPackages)
   ];
   programs.kdeconnect = {
     enable = true;

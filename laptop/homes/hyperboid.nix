@@ -10,7 +10,7 @@ in {
   gtk = let
     icons = {
       name = "Adwaita";
-      package = pkgs.gnome.adwaita-icon-theme;
+      package = pkgs.adwaita-icon-theme;
     };
   in {
     enable = true;
@@ -28,7 +28,7 @@ in {
       unityhub
       vesktop
       aseprite
-      nodejs-18_x
+      nodejs
       cargo
       rustc
       rust-analyzer
