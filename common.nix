@@ -193,6 +193,7 @@ in {
     pulseaudio
     inotify-tools
     obs-studio
+    appimage-run
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -224,7 +225,10 @@ in {
   virtualisation.docker.enable = true;
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.firewall.allowedUDPPorts = [
+    # Gaster's Cool Social Network!
+    25574
+  ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
