@@ -69,6 +69,7 @@ in {
   services.xserver.desktopManager.gnome.enable = true;
 
   programs.niri.enable = true;
+  programs.niri.package = unstable.niri;
 
   # Configure keymap in X11
   services.xserver = {

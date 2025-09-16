@@ -40,6 +40,8 @@ in {
       rustc
       rust-analyzer
       ffmpeg
+      fuzzel # app launcher used in niri config
+      xwayland-satellite
       (callPackage ../../packages/zen.nix {})
     ])
     ++ (with unstable; [
