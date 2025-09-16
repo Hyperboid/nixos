@@ -41,7 +41,8 @@ in {
       rust-analyzer
       ffmpeg
       fuzzel # app launcher used in niri config
-      xwayland-satellite
+      waybar
+      xwayland-satellite # used by niri to support xwayland
       (callPackage ../../packages/zen.nix {})
     ])
     ++ (with unstable; [
