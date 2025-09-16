@@ -49,6 +49,7 @@ in {
       vscode
       tiled
       dragon-drop
+      swaynotificationcenter
     ]);
   services = {
     arrpc = {
