@@ -20,6 +20,13 @@ in {
     theme.name = "Adwaita";
   };
   home.stateVersion = "24.05";
+  # Manual file deployment
+  home.file = {
+    "${config.xdg.configHome}/niri" = {
+      source = ./hyperboid/niri;
+      recursive = true;
+    };
+  };
   home.packages =
     (with pkgs; [
       gamescope

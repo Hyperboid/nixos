@@ -68,6 +68,8 @@ in {
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
+  programs.niri.enable = true;
+
   # Configure keymap in X11
   services.xserver = {
     xkb.layout = "us";
@@ -93,7 +95,7 @@ in {
   };
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -194,6 +196,7 @@ in {
     inotify-tools
     obs-studio
     appimage-run
+    kitty
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
