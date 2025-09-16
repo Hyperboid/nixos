@@ -148,6 +148,7 @@ in {
         yt-dlp
         mpv
         ydotool
+        swaylock-effects
       ])
       ++ gnomeExts;
   };
