@@ -143,6 +143,7 @@ in {
         luajitPackages.luarocks
         id3v2
         exiftool
+        lftp
       ]
       ++ (with unstable; [
         yt-dlp
