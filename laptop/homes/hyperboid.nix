@@ -43,6 +43,7 @@ in {
       fuzzel # app launcher used in niri config
       waybar
       xwayland-satellite # used by niri to support xwayland
+      pavucontrol
       (callPackage ../../packages/zen.nix {})
     ])
     ++ (with unstable; [
