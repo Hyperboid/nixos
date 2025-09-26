@@ -2,13 +2,16 @@
 {
   appimageTools,
   fetchurl,
+  system,
+  lib,
   ...
 }: let
   pname = "zen";
   version = "latest";
+  arch = lib.strings.removeSuffix "-linux" system;
 
   src = fetchurl {
-    url = "https://github.com/zen-browser/desktop/releases/latest/download/zen-x86_64.AppImage";
+    url = "https://github.com/zen-browser/desktop/releases/latest/download/zen-${arch}.AppImage";
     sha256 = "sha256-kDXEhZIRAvd/36o3U2IA/XzmHsmuj2lMD0cpEd8YLL0=";
   };
 
@@ -27,6 +30,6 @@ in
     '';
 
     meta = {
-      platforms = ["x86_64-linux"];
+      platforms = ["x86_64-linux" "aarch64-linux"];
     };
   }

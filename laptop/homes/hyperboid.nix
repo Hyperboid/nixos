@@ -6,6 +6,7 @@
   ...
 }: let
   unstable = specialArgs.unstable;
+  mypkgs = specialArgs.mypkgs;
 in {
   gtk = let
     icons = {
@@ -44,7 +45,7 @@ in {
       waybar
       xwayland-satellite # used by niri to support xwayland
       pavucontrol
-      (callPackage ../../packages/zen.nix {})
+      mypkgs.zen
     ])
     ++ (with unstable; [
       vscode

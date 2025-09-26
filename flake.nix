@@ -19,6 +19,11 @@
     home-manager,
     ...
   }: let
+      # System types to support.
+      supportedSystems = [ "x86_64-linux" "aarch64-linux" ];
+      # Helper function to generate an attrset '{ x86_64-linux = f "x86_64-linux"; ... }'.
+      forAllSystems = innerSetFunc: (nixpkgs.lib.genAttrs supportedSystems (system: innerSetFunc {system = system; pkgs = import nixpkgs {system = system;};}));
+  in rec {
     specialArgs = {
       inputs = inputs;
       unstable = import nixpkgs-unstable {
@@ -29,9 +34,9 @@
         config.allowUnfree = true;
         system = "x86_64-linux";
       };
+      mypkgs = packages.x86_64-linux;
       pkgs2411 = nixpkgs-2411.legacyPackages.x86_64-linux;
     };
-  in {
     nixosConfigurations = {
       hyperboid-laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -96,5 +101,8 @@
         inherit specialArgs;
       };
     };
+    packages = forAllSystems ({system, pkgs}: {
+      zen = pkgs.callPackage ./packages/zen.nix {inherit system;};
+    });
   };
 }
