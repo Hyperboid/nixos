@@ -46,6 +46,9 @@ in {
       xwayland-satellite # used by niri to support xwayland
       pavucontrol
       mypkgs.zen
+      # Development tools that it's annoying to not have
+      gnumake
+      gcc
     ])
     ++ (with unstable; [
       vscode
