@@ -35,11 +35,13 @@ in {
       bun
       unityhub
       vesktop
+      lazygit
       aseprite
       nodejs
       cargo
       rustc
       rust-analyzer
+      nerd-fonts.fira-code
       ffmpeg
       fuzzel # app launcher used in niri config
       waybar

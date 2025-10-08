@@ -135,7 +135,6 @@ in {
         thunderbird
         keepassxc
         wl-clipboard
-        nerd-fonts.fira-code
         gjs
         vte
         libhandy
