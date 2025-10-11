@@ -217,6 +217,7 @@ in {
     htop
     appimage-run
     kitty
+    libqalculate
   ];
   programs.obs-studio.enable = true;
   programs.obs-studio.enableVirtualCamera = true;
