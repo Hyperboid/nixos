@@ -166,7 +166,25 @@ in {
     nspr
     atkmm
     steam-fhsenv-without-steam # woah this was huge (used to be in steamPackages)
-  ];
+   ] ++ (with unstable; [
+    at-spi2-atk
+    cups.lib
+    dbus.lib
+    libdrm
+    gtk3
+    pango
+    cairo
+    libx11
+    xorg.libXcomposite
+    xorg.libXdamage
+    libxext
+    libxfixes
+    libxrandr
+    libgbm
+    expat
+    libxcb
+    libxkbcommon
+  ]);
   programs.kdeconnect = {
     enable = true;
     package = pkgs.gnomeExtensions.gsconnect;
