@@ -218,6 +218,7 @@ in {
     appimage-run
     kitty
     libqalculate
+    distrobox
   ];
   programs.obs-studio.enable = true;
   programs.obs-studio.enableVirtualCamera = true;
@@ -248,7 +249,12 @@ in {
     openFirewall = true;
   };
   systemd.services.kanata-laptop.serviceConfig.User = lib.mkForce "root";
-  virtualisation.docker.enable = true;
+
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+  };
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   networking.firewall.allowedUDPPorts = [
