@@ -57,6 +57,7 @@ in {
       tiled
       dragon-drop
       swaynotificationcenter
+      emmylua-ls
     ]);
   services = {
     arrpc = {
