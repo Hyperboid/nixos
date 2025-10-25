@@ -51,6 +51,7 @@ in {
       # Development tools that it's annoying to not have
       gnumake
       gcc
+      swaybg
     ])
     ++ (with unstable; [
       vscode
