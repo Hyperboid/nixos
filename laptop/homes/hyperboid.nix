@@ -35,7 +35,6 @@ in {
       bun
       unityhub
       vesktop
-      lazygit
       aseprite
       nodejs
       cargo
@@ -59,6 +58,10 @@ in {
       dragon-drop
       swaynotificationcenter
       emmylua-ls
+      ydiff
+      delta
+      diff-so-fancy
+      lazygit
     ]);
   services = {
     arrpc = {
