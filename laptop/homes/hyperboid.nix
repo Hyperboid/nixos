@@ -62,6 +62,8 @@ in {
       delta
       diff-so-fancy
       lazygit
+      go
+      gopls
     ]);
   services = {
     arrpc = {
