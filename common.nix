@@ -139,13 +139,13 @@ in {
         vte
         libhandy
         partclone
-        luajitPackages.luarocks
         id3v2
         exiftool
         lftp
       ]
       ++ (with unstable; [
         yt-dlp
+        luajitPackages.luarocks
         mpv
         ydotool
         swaylock-effects
