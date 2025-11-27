@@ -64,6 +64,7 @@ in {
       lazygit
       go
       gopls
+      gh
     ]);
   services = {
     arrpc = {
