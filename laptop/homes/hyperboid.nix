@@ -35,7 +35,6 @@ in {
       bun
       unityhub
       vesktop
-      aseprite
       nodejs
       cargo
       rustc
@@ -65,6 +64,7 @@ in {
       go
       gopls
       gh
+      aseprite
     ]);
   services = {
     arrpc = {
