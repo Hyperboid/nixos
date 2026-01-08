@@ -274,6 +274,9 @@ spawn-at-startup "waybar"
 // My cool wallpaper
 spawn-sh-at-startup "swaybg -i ~/Pictures/Wallpapers/foladcity.png -m fill"
 
+// I keep forgetting to make this auto start so I'm FINALLY doing it
+spawn-sh-at-startup "flatpak run org.signal.Signal"
+
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
 
