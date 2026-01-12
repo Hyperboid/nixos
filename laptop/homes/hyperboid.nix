@@ -65,6 +65,7 @@ in {
       gopls
       gh
       aseprite
+      ldtk
     ]);
   services = {
     arrpc = {
