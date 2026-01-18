@@ -45,7 +45,6 @@ in {
       waybar
       xwayland-satellite # used by niri to support xwayland
       pavucontrol
-      mypkgs.zen
       # Development tools that it's annoying to not have
       gnumake
       gcc
@@ -53,7 +52,6 @@ in {
     ])
     ++ (with unstable; [
       vscode
-      tiled
       dragon-drop
       swaynotificationcenter
       emmylua-ls
@@ -66,6 +64,9 @@ in {
       gh
       aseprite
       ldtk
+    ]) ++ (with mypkgs; [
+        zen
+        tiled
     ]);
   services = {
     arrpc = {

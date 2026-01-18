@@ -22,7 +22,12 @@
       # System types to support.
       supportedSystems = [ "x86_64-linux" "aarch64-linux" ];
       # Helper function to generate an attrset '{ x86_64-linux = f "x86_64-linux"; ... }'.
-      forAllSystems = innerSetFunc: (nixpkgs.lib.genAttrs supportedSystems (system: innerSetFunc {system = system; pkgs = import nixpkgs {system = system;};}));
+      forAllSystems = innerSetFunc: (nixpkgs.lib.genAttrs supportedSystems (system: innerSetFunc 
+        {
+          system = system;
+          pkgs = import nixpkgs {system = system;};
+          pkgs-unstable = import nixpkgs-unstable {system = system;};}
+      ));
   in rec {
     specialArgs = {
       inputs = inputs;
@@ -101,8 +106,9 @@
         inherit specialArgs;
       };
     };
-    packages = forAllSystems ({system, pkgs}: {
+    packages = forAllSystems ({system, pkgs, pkgs-unstable}: {
       zen = pkgs.callPackage ./packages/zen.nix {inherit system;};
+      tiled = pkgs-unstable.libsForQt5.callPackage ./packages/tiled-master.nix {};
     });
   };
 }
