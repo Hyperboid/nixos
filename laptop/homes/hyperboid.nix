@@ -64,9 +64,12 @@ in {
       gh
       aseprite
       ldtk
+      neovim-remote
+      dotnetCorePackages.sdk_8_0-bin
+      zed-editor
     ]) ++ (with mypkgs; [
-        zen
-        tiled
+      zen
+      tiled
     ]);
   services = {
     arrpc = {
