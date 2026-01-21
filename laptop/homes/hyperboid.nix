@@ -65,7 +65,7 @@ in {
       aseprite
       ldtk
       neovim-remote
-      dotnetCorePackages.sdk_8_0-bin
+      dotnetCorePackages.sdk_9_0-bin
       zed-editor
     ]) ++ (with mypkgs; [
       zen
