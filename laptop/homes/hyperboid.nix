@@ -67,6 +67,7 @@ in {
       neovim-remote
       dotnetCorePackages.sdk_9_0-bin
       zed-editor
+      blender
     ]) ++ (with mypkgs; [
       zen
       tiled
