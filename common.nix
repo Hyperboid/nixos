@@ -65,8 +65,8 @@ in {
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
 
   programs.niri.enable = true;
   programs.niri.package = unstable.niri;
@@ -165,7 +165,6 @@ in {
     nss
     nspr
     atkmm
-    steam-fhsenv-without-steam # woah this was huge (used to be in steamPackages)
    ] ++ (with unstable; [
     at-spi2-atk
     cups.lib
