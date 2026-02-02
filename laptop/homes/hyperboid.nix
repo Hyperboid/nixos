@@ -69,6 +69,7 @@ in {
       zed-editor
       blender
       clang-tools
+      git-ftp
     ]) ++ (with mypkgs; [
       zen
       tiled
