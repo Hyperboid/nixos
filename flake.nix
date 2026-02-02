@@ -109,6 +109,7 @@
     packages = forAllSystems ({system, pkgs, pkgs-unstable}: {
       zen = pkgs.callPackage ./packages/zen.nix {inherit system;};
       tiled = pkgs-unstable.libsForQt5.callPackage ./packages/tiled-master.nix {};
+      love = pkgs.callPackage ./packages/love.nix {inherit system;};
     });
   };
 }
