@@ -68,6 +68,7 @@ in {
       dotnetCorePackages.sdk_9_0-bin
       zed-editor
       blender
+      clang-tools
     ]) ++ (with mypkgs; [
       zen
       tiled
