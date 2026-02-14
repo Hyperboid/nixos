@@ -214,13 +214,20 @@ in {
     pulseaudio
     inotify-tools
     htop
-    appimage-run
     kitty
     libqalculate
     distrobox
   ];
   programs.obs-studio.enable = true;
   programs.obs-studio.enableVirtualCamera = true;
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+    package = pkgs.appimage-run.override { extraPkgs = pkgs: [
+      pkgs.icu72
+      pkgs.libxcrypt-legacy
+    ];};
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
