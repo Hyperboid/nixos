@@ -174,8 +174,8 @@ in {
     pango
     cairo
     libx11
-    xorg.libXcomposite
-    xorg.libXdamage
+    libxcomposite
+    libxdamage
     libxext
     libxfixes
     libxrandr
