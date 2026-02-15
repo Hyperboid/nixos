@@ -70,6 +70,7 @@ in {
       blender
       clang-tools
       git-ftp
+      git-lfs
     ]) ++ (with mypkgs; [
       zen
       tiled
