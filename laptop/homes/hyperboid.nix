@@ -71,6 +71,8 @@ in {
       clang-tools
       git-ftp
       git-lfs
+      kdePackages.kdialog
+      zenity
     ]) ++ (with mypkgs; [
       zen
       tiled
