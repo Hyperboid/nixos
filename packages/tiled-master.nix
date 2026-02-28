@@ -35,7 +35,7 @@ stdenv.mkDerivation rec {
     owner = "mapeditor";
     repo = "tiled";
     rev = "master";
-    sha256 = "sha256-V17sksenW141tvMZ9pALKzK/VipaHLqAqDO0EwC9qbE=";
+    sha256 = "sha256-CsJXtWP15YZ6jrSQNZ5ij5bv+6j7Ac/96T8Hl6BsJrg=";
   };
 
   nativeBuildInputs = [

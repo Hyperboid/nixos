@@ -55,6 +55,8 @@ in {
       dragon-drop
       swaynotificationcenter
       emmylua-ls
+      emmylua-check
+      emmylua-doc-cli
       ydiff
       delta
       diff-so-fancy
