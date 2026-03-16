@@ -24,4 +24,34 @@
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+
+  # ====== BEGIN AMD BS ======
+  boot.initrd.kernelModules = [ "amdgpu" ];
+  nixpkgs.config.rocmSupport = true;
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+    extraPackages = [ pkgs.rocmPackages.clr.icd ];
+  };
+  hardware.amdgpu.opencl.enable = true;
+  environment.systemPackages = with pkgs; [
+    lact
+    rocmPackages.rocminfo
+    clinfo
+    rocmPackages.clr.icd
+  ];
+  systemd.tmpfiles.rules = [
+    "L+    /opt/rocm   -    -    -     -    ${pkgs.rocmPackages.clr}"
+  ];
+
+  systemd.services.lact = {
+    description = "AMDGPU Control Daemon";
+    after = ["multi-user.target"];
+    wantedBy = ["multi-user.target"];
+    serviceConfig = {
+      ExecStart = "${pkgs.lact}/bin/lact daemon";
+    };
+    enable = true;
+  };
+# ====== END AMD BS ======
 }
