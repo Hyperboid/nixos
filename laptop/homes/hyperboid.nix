@@ -78,7 +78,6 @@ in {
     ]) ++ (with mypkgs; [
       zen
       tiled
-      (pkgs.writeShellScriptBin "love12" "exec -a love ${love}/bin/love $@")
     ]);
   services = {
     arrpc = {

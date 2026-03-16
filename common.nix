@@ -9,6 +9,7 @@
   ...
 }: let
   unstable = specialArgs.unstable;
+  mypkgs = specialArgs.mypkgs;
   pkgs-wine = specialArgs.pkgs-wine;
   gnomeExts = with pkgs.gnomeExtensions; [
     ddterm
@@ -198,7 +199,7 @@ in {
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = (with pkgs; [
     neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     gitFull
@@ -208,7 +209,6 @@ in {
     gnome-extension-manager
     vte
     libhandy
-    love
     gedit
     busybox
     pulseaudio
@@ -217,7 +217,10 @@ in {
     kitty
     libqalculate
     distrobox
-  ];
+    (pkgs.writeShellScriptBin "love11" "exec -a love ${love}/bin/love $@")
+  ]) ++ (with mypkgs; [
+    love
+  ]);
   programs.obs-studio.enable = true;
   programs.obs-studio.enableVirtualCamera = true;
   programs.appimage = {
