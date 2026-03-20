@@ -74,6 +74,7 @@ in {
       git-ftp
       git-lfs
       kdePackages.kdialog
+      kdePackages.dolphin
       zenity
     ]) ++ (with mypkgs; [
       zen
