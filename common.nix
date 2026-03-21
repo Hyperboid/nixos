@@ -221,8 +221,15 @@ in {
   ]) ++ (with mypkgs; [
     love
   ]);
-  programs.obs-studio.enable = true;
-  programs.obs-studio.enableVirtualCamera = true;
+  programs.obs-studio = {
+    enable = true;
+    enableVirtualCamera = true;
+    plugins = with pkgs.obs-studio-plugins; [
+      obs-pipewire-audio-capture
+      obs-backgroundremoval
+      obs-vkcapture
+    ];
+  };
   programs.appimage = {
     enable = true;
     binfmt = true;
