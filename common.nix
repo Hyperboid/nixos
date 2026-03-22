@@ -218,6 +218,7 @@ in {
     libqalculate
     distrobox
     (pkgs.writeShellScriptBin "love11" "exec -a love ${love}/bin/love $@")
+    ruffle
   ]) ++ (with mypkgs; [
     love
   ]);
