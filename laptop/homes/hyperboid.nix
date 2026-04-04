@@ -76,6 +76,7 @@ in {
       kdePackages.kdialog
       kdePackages.dolphin
       zenity
+      bluetui
     ]) ++ (with mypkgs; [
       zen
       tiled
