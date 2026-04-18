@@ -17,6 +17,7 @@
     nixpkgs-wine,
     nixpkgs-2411,
     home-manager,
+    self,
     ...
   }: let
       # System types to support.
@@ -110,6 +111,8 @@
       zen = pkgs.callPackage ./packages/zen.nix {inherit system;};
       tiled = pkgs-unstable.libsForQt5.callPackage ./packages/tiled-master.nix {};
       love = pkgs.callPackage ./packages/love.nix {inherit system;};
+      gamemaker-studio-2 = pkgs.callPackage ./packages/gamemaker-studio-2.nix { mypkgs = self.packages."${system}"; };
+      gamemaker-studio-2-unwrapped = pkgs.callPackage ./packages/gamemaker-studio-2-unwrapped.nix {};
     });
   };
 }
