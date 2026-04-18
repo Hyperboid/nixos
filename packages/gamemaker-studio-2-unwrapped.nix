@@ -27,6 +27,9 @@ in stdenv.mkDerivation {
   # Required at running time
   buildInputs = with pkgs; [
     glibc
+    sdl3
+    SDL2
+    SDL
     gcc-unwrapped
     libz
     lttng-ust_2_12
