@@ -80,6 +80,7 @@ in {
     ]) ++ (with mypkgs; [
       zen
       tiled
+      gamemaker-studio-2.langserver
     ]);
   services = {
     arrpc = {
