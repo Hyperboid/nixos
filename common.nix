@@ -210,6 +210,7 @@ in {
     vte
     libhandy
     gedit
+    openssl
     busybox
     pulseaudio
     inotify-tools
