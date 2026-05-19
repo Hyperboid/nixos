@@ -262,10 +262,6 @@ in {
       };
     };
   };
-  services.murmur = {
-    enable = true;
-    openFirewall = true;
-  };
   systemd.services.kanata-laptop.serviceConfig.User = lib.mkForce "root";
 
   virtualisation.podman = {
