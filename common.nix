@@ -234,7 +234,8 @@ in {
   };
   programs.appimage = {
     enable = true;
-    binfmt = true;
+    # Breaks appimages in distrobox containers, which is needed for GameMaker
+    binfmt = false;
     package = pkgs.appimage-run.override { extraPkgs = pkgs: [
       pkgs.icu72
       pkgs.libxcrypt-legacy
