@@ -13,9 +13,16 @@
     eula = true;
     openFirewall = true;
     package = pkgs.minecraft-server.override {
-      url = "https://piston-data.mojang.com/v1/objects/63a80c132f2270af2f43161db596fce69e3e5339/server.jar";
-      sha1 = "759kx7p6zjbba78n8cpsyw125w9hra33";
+      url = "https://piston-data.mojang.com/v1/objects/4303619d9f1a22f51a98adbcd2d528f43c5b19bb/server.jar";
+      sha1 = "pccmng7l53ax5g5dk0dga8hskyfn20s3";
       jre_headless = pkgs.jdk25_headless;
     };
+  };
+  users.users.minecraft = {
+    extraGroups = ["systemd-journal"];
+    packages = with pkgs; [
+      tmux
+    ];
+    shell = pkgs.zsh;
   };
 }
