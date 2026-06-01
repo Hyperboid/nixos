@@ -13,8 +13,8 @@
     eula = true;
     openFirewall = true;
     package = pkgs.minecraft-server.override {
-      url = "https://piston-data.mojang.com/v1/objects/4303619d9f1a22f51a98adbcd2d528f43c5b19bb/server.jar";
-      sha1 = "pccmng7l53ax5g5dk0dga8hskyfn20s3";
+      url = "https://piston-data.mojang.com/v1/objects/b7c0d39bf9d7897dba2f9f725957224e74d89a0f/server.jar";
+      sha1 = "1yddhx2f49bmjwlz5yx7v2fpz6dx7h5p";
       jre_headless = pkgs.jdk25_headless;
     };
   };
