@@ -40,6 +40,7 @@
     rocmPackages.rocminfo
     clinfo
     rocmPackages.clr.icd
+    jq
   ];
   systemd.tmpfiles.rules = [
     "L+    /opt/rocm   -    -    -     -    ${pkgs.rocmPackages.clr}"
