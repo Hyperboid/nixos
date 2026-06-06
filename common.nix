@@ -220,6 +220,7 @@ in {
     distrobox
     (pkgs.writeShellScriptBin "love11" "exec -a love ${love}/bin/love $@")
     ruffle
+    python3
   ]) ++ (with mypkgs; [
     love
   ]);

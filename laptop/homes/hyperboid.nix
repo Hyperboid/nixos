@@ -33,7 +33,6 @@ in {
       gamescope
       blockbench
       bun
-      unityhub
       vesktop
       nodejs
       cargo
@@ -77,9 +76,8 @@ in {
       kdePackages.dolphin
       zenity
       bluetui
-    ]) ++ (with mypkgs; [
-      zen
       tiled
+    ]) ++ (with mypkgs; [
     ]);
   services = {
     arrpc = {

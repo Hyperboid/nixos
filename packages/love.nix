@@ -27,7 +27,7 @@
     owner = "love2d";
     repo = "love";
     rev = "main";
-    sha256 = "sha256-n8uhiDKk5H9f07qtD7alWBjePNnnXEPYohjC7lzoGXU=";
+    sha256 = "sha256-Du9+EHxYAQ1XhprUaLeBM5a3EUrh0yh/3JRpZOUk5F4=";
   };
 
   nativeBuildInputs = [

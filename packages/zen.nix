@@ -12,7 +12,7 @@
 
   src = fetchurl {
     url = "https://github.com/zen-browser/desktop/releases/latest/download/zen-${arch}.AppImage";
-    sha256 = "sha256-7A6159CLD+CKedWcJHRtByGuPjb5TEVoycNLnTST4uo=";
+    sha256 = "sha256-8U6rRNhbsvuVUAUw2PsoZoPiycFlAErcV5nkODyZOqc=";
   };
 
   appimageContents = appimageTools.extract {

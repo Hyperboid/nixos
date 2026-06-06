@@ -29,13 +29,13 @@ in
 stdenv.mkDerivation rec {
   pname = "tiled";
   # nixpkgs-update: no auto update
-  version = "1.12.0";
+  version = "1.12.2";
 
   src = fetchFromGitHub {
     owner = "mapeditor";
     repo = "tiled";
     rev = "master";
-    sha256 = "sha256-VLi+XTFXYZmSHWwt1iaaAhgWz8RpRbxVmtjOoGqJnaE=";
+    sha256 = "sha256-A43LA/E/eCpBxVV+T68fKbh/AZepagEoia/hljeEjf0=";
   };
 
   nativeBuildInputs = [
