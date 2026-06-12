@@ -18,11 +18,13 @@
       jre_headless = pkgs.jdk25_headless;
     };
   };
+  users.users.hyperboid.extraGroups = [ "minecraft" ];
   users.users.minecraft = {
     extraGroups = ["systemd-journal"];
     packages = with pkgs; [
       tmux
     ];
     shell = pkgs.zsh;
+    homeMode = "750";
   };
 }
